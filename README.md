@@ -1,8 +1,7 @@
 HW3: Model-based Bias Removal in Machine Learning using Synthetic Blood Pressure Data
-
+\n
 Name: Liping Li       Email: liping.li@emory.edu
-
-
+\n
 
 Code link on GitHub https://github.com/Sara666-LI/BMI500_HMW11_Model-based-Bias-Removal-in-Machine-Learning/
 
