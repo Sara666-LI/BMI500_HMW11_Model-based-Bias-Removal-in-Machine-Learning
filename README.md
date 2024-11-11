@@ -5,6 +5,7 @@
 
 **Code link on GitHub https://github.com/Sara666-LI/BMI500_HMW11_Model-based-Bias-Removal-in-Machine-Learning/**
 
+“Disclaimer: No generative AI (in any form) has been used to complete this homewor"
 
 
 **A) i. Choose both Polynomial Regression Model and Sigmoid-Gaussian Model for SBP and DBP here in my work.**
