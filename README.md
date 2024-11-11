@@ -136,55 +136,55 @@ ii.  Biases in the model arise due to imbalanced datasets, significantly impacti
 
 **iii.)  Discussion:**
 
-i. Impact of Dataset Imbalance: 
-
-Balanced datasets are essential in healthcare to ensure patient safety, care quality, and health equity. They improve diagnostic accuracy by representing diverse demographic groups, reducing missed diagnoses, and enabling accurate risk stratification. In treatment, they enhance outcome predictions, medication dosing, and personalized care. For clinical decision support, balanced data mitigate algorithmic bias, improving automated tools and triage accuracy. Health equity benefits include identifying disparities, enabling equitable screening, and ensuring fair resource allocation. They also support better understanding of disease patterns, more effective public health interventions, and improved preventive care strategies across populations.
-
-
-
-ii. Real-world challenges with unbalanced datasets arise from both data collection and statistical issues. Data collection difficulties include demographic disparities, clinical practice variations, and resource constraints, leading to underrepresentation of certain populations, inconsistent data, and limited resources. Statistically, model performance is hindered by reduced accuracy for minority groups, overfitting to the majority, and difficulty in validation. Additionally, feature selection may bias models towards majority group characteristics, and threshold selection becomes challenging due to differing optimal thresholds across groups, affecting sensitivity and specificity.
-
-
-
-iii. Practical strategies to address challenges in unbalanced datasets focus on both data collection and model development. Data collection approaches include active sampling strategies like targeted recruitment and oversampling, synthetic data generation using techniques like SMOTE, and ensuring data quality through standardized protocols and audits. For model development, strategies involve selecting algorithms robust to class imbalance, using ensemble and cost-sensitive methods, applying stratified cross-validation and class weight adjustments in training, and evaluating with per-class performance and fairness metrics to monitor and mitigate bias.
-
-
-
-
-
-iv.) Bias Mitigation in Training:
-
-Here I used Custom Bias-Aware Loss Function to modify the training strategy. Custom Bias-Aware Loss Function combined standard binary cross-entropy for classification accuracy and bias penalty term measuring male/female performance difference, it’s controlled by alpha parameter (higher alpha means stronger bias mitigation).
+  i. Impact of Dataset Imbalance: 
+  
+  Balanced datasets are essential in healthcare to ensure patient safety, care quality, and health equity. They improve diagnostic accuracy by representing diverse demographic groups, reducing missed diagnoses, and enabling accurate risk stratification. In treatment, they enhance outcome predictions, medication dosing, and personalized care. For clinical decision support, balanced data mitigate algorithmic bias, improving automated tools and triage accuracy. Health equity benefits include identifying disparities, enabling equitable screening, and ensuring fair resource allocation. They also support better understanding of disease patterns, more effective public health interventions, and improved preventive care strategies across populations.
+  
+  
+  
+  ii. Real-world challenges with unbalanced datasets arise from both data collection and statistical issues. Data collection difficulties include demographic disparities, clinical practice variations, and resource constraints, leading to underrepresentation of certain populations, inconsistent data, and limited resources. Statistically, model performance is hindered by reduced accuracy for minority groups, overfitting to the majority, and difficulty in validation. Additionally, feature selection may bias models towards majority group characteristics, and threshold selection becomes challenging due to differing optimal thresholds across groups, affecting sensitivity and specificity.
+  
+  
+  
+  iii. Practical strategies to address challenges in unbalanced datasets focus on both data collection and model development. Data collection approaches include active sampling strategies like targeted recruitment and oversampling, synthetic data generation using techniques like SMOTE, and ensuring data quality through standardized protocols and audits. For model development, strategies involve selecting algorithms robust to class imbalance, using ensemble and cost-sensitive methods, applying stratified cross-validation and class weight adjustments in training, and evaluating with per-class performance and fairness metrics to monitor and mitigate bias.
+  
 
 
 
-There are three key components of the strategy:
 
-1. Class-Specific Loss Tracking: Separately tracks performance for males and females, and enables targeted optimization for each group.
+**iv.) Bias Mitigation in Training:**
 
-
-  --- 
-    male_mask = tf.cast(y_true == 1, tf.float32)
-    
-    female_mask = tf.cast(y_true == 0, tf.float32)
-
-  ---
-
-2. Bias penalty term penalizes differences in performance between genders, it encourages model to maintain similar accuracy across groups.
-
-
-  ---
-    Copybias_penalty = tf.abs(male_avg - female_avg)
-  ---
-
-
-3. Balanced class weights compensates for imbalanced class distribution, which ives higher importance to minority class samples
-
-
-  ---
-    class_weights = compute_class_weight('balanced', classes=np.unique(y), y=y)
-  ---  
-
+ Here I used Custom Bias-Aware Loss Function to modify the training strategy. Custom Bias-Aware Loss Function combined standard binary cross-entropy for classification accuracy and bias penalty term measuring male/female performance difference, it’s controlled by alpha parameter (higher alpha means stronger bias mitigation).
+ 
+ 
+ 
+ There are three key components of the strategy:
+ 
+ 1. Class-Specific Loss Tracking: Separately tracks performance for males and females, and enables targeted optimization for each group.
+ 
+ 
+   --- 
+     male_mask = tf.cast(y_true == 1, tf.float32)
+     
+     female_mask = tf.cast(y_true == 0, tf.float32)
+ 
+   ---
+ 
+ 2. Bias penalty term penalizes differences in performance between genders, it encourages model to maintain similar accuracy across groups.
+ 
+ 
+   ---
+     Copybias_penalty = tf.abs(male_avg - female_avg)
+   ---
+ 
+ 
+ 3. Balanced class weights compensates for imbalanced class distribution, which ives higher importance to minority class samples
+ 
+ 
+   ---
+     class_weights = compute_class_weight('balanced', classes=np.unique(y), y=y)
+   ---  
+ 
 
 **Reasoning Behind the Approach:**
 
