@@ -168,22 +168,22 @@ There are three key components of the strategy:
     
     female_mask = tf.cast(y_true == 0, tf.float32)
 
-    ---
+   ---
 
 2.Bias penalty term penalizes differences in performance between genders, it encourages model to maintain similar accuracy across groups.
 
 
-    ---
+  ---
     Copybias_penalty = tf.abs(male_avg - female_avg)
-    ---
+  ---
 
 
 3. Balanced class weights compensates for imbalanced class distribution, which ives higher importance to minority class samples
 
 
-    ---
+   ---
     class_weights = compute_class_weight('balanced', classes=np.unique(y), y=y)
-    ---
+    
 
 
 Reasoning Behind the Approach:
