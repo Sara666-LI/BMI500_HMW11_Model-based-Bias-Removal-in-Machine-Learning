@@ -1,15 +1,15 @@
-HW3: Model-based Bias Removal in Machine Learning using Synthetic Blood Pressure Data
+**HW3: Model-based Bias Removal in Machine Learning using Synthetic Blood Pressure Data**
 
-Name: Liping Li       Email: liping.li@emory.edu
-
-
-Code link on GitHub https://github.com/Sara666-LI/BMI500_HMW11_Model-based-Bias-Removal-in-Machine-Learning/
+**Name: Liping Li       Email: liping.li@emory.edu**
 
 
+**Code link on GitHub https://github.com/Sara666-LI/BMI500_HMW11_Model-based-Bias-Removal-in-Machine-Learning/**
 
-i. Choose both Polynomial Regression Model and Sigmoid-Gaussian Model for SBP and DBP here in my work.
 
-ii. Implement the models in Python. Codes are on GitHub. 
+
+**A) i. Choose both Polynomial Regression Model and Sigmoid-Gaussian Model for SBP and DBP here in my work.**
+
+**ii. Implement the models in Python. Codes are on GitHub. **
 
 
 
@@ -55,12 +55,12 @@ a_peak = 52.28 years
 
 
 
-iii. The model curves are shown below:
+**iii. The model curves are shown below:**
 
 ![My Figure](model_curve.png)
 
 
-iv. Parameter Interpretation:
+**iv. Parameter Interpretation:**
 
 Polynomial Model:
 
@@ -84,7 +84,7 @@ apeak (~45 years): Age of maximum DBP. It corresponds to vascular elasticity pea
 
 
 
-v. Discussion and Analysis:
+**v. Discussion and Analysis:**
 
 i. For SBP, Sigmoid model is superior because it better captures physiological plateauing and more realistic at age extremes with better R² and MSE values.
 
@@ -104,11 +104,11 @@ The model's limitations in capturing demographic nuances include an inability to
 
 
 
-i.) Synthetic Blood Pressure Data Generation
+**B) i.) Synthetic Blood Pressure Data Generation**
 
 Here, I created synthetic BP data using bivariate normal distributions for males and females and different male-to-female ratios while maintaining total sample size of 100000, which can be implemented by the function np.random.multivariate_normal in NumPy library. Then a binary label indicating male (1) or female (0) was assigned to each data.
 
-ii.) Binary Classification
+**ii.) Binary Classification**
 
 Divide the dataset into training (80%) and testing (20%) sets and then I chose logistic regression model as the binary classifier to estimate sex based on SBP and DBP values,
 
@@ -135,7 +135,7 @@ ii.  Biases in the model arise due to imbalanced datasets, significantly impacti
 
 
 
-iii.)  Discussion:
+**iii.)  Discussion:**
 
 i. Impact of Dataset Imbalance: 
 
@@ -202,7 +202,7 @@ The approach leverages a custom loss function for direct fairness optimization, 
 The results show that increasing the bias penalty (alpha) reduces the accuracy gap between males and females with the dataset of 100000, though potentially at the cost of overall accuracy. This approach allows practitioners to tune the bias-accuracy trade-off according to their specific needs.
 
 
-Suggestions for future modeling improvement:
+**Suggestions for future modeling improvement:**
 
 Based on the analysis and results, here are some suggestions for future modeling improvements to address bias in blood pressure classification.
 1. Expand dataset diversity: Collect data from a more diverse set of healthcare providers and locations and ensure adequate representation of underserved demographic groups. Also, try to collaborate with community organizations to improve data inclusivity
