@@ -11,48 +11,45 @@
 
 **ii. Implement the models in Python. Codes are on GitHub. **
 
+  Fitted Parameters for each model:
 
+    SBP Polynomial Model:
+    
+    c1 = -0.002022 mmHg/year²
+    
+    c2 = 0.498886 mmHg/year
+    
+    c3 = 108.854700 mmHg
 
-Fitted Parameters for each model:
+---
+    DBP Polynomial Model:
+    
+    d1 = -0.005561 mmHg/year²
+    
+    d2 = 0.583338 mmHg/year
+    
+    d3 = 63.111150 mmHg
 
-SBP Polynomial Model:
+---
 
-c1 = -0.002022 mmHg/year²
+    SBP Sigmoid Model:
+    
+    Smax = 145.26 mmHg
+    
+    k = 0.0198 year⁻¹
+    
+    a0 = -53.81 years
+    
+---
 
-c2 = 0.498886 mmHg/year
-
-c3 = 108.854700 mmHg
-
-
-
-DBP Polynomial Model:
-
-d1 = -0.005561 mmHg/year²
-
-d2 = 0.583338 mmHg/year
-
-d3 = 63.111150 mmHg
-
-
-
-SBP Sigmoid Model:
-
-Smax = 145.26 mmHg
-
-k = 0.0198 year⁻¹
-
-a0 = -53.81 years
-
-
-
-DBP Gaussian Model:
-
-Dmax = 78.50 mmHg
-
-a_peak = 52.28 years
-
-σ = 81.14 years
-
+    DBP Gaussian Model:
+    
+    Dmax = 78.50 mmHg
+    
+    a_peak = 52.28 years
+    
+    σ = 81.14 years
+---
 
 
 **iii. The model curves are shown below:**
