@@ -56,6 +56,7 @@ a_peak = 52.28 years
 
 
 iii. The model curves are shown below:
+
 ![My Figure](model_curve.png)
 
 
