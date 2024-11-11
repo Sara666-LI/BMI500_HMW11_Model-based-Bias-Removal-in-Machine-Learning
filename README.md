@@ -9,105 +9,105 @@
 
 **A) i. Choose both Polynomial Regression Model and Sigmoid-Gaussian Model for SBP and DBP here in my work.**
 
-**ii. Implement the models in Python. Codes are on GitHub. **
+  **ii. Implement the models in Python. Codes are on GitHub.**
 
-  Fitted Parameters for each model:
-
-    SBP Polynomial Model:
-    
-    c1 = -0.002022 mmHg/year²
-    
-    c2 = 0.498886 mmHg/year
-    
-    c3 = 108.854700 mmHg
-
----
-    DBP Polynomial Model:
-    
-    d1 = -0.005561 mmHg/year²
-    
-    d2 = 0.583338 mmHg/year
-    
-    d3 = 63.111150 mmHg
-
----
-
-    SBP Sigmoid Model:
-    
-    Smax = 145.26 mmHg
-    
-    k = 0.0198 year⁻¹
-    
-    a0 = -53.81 years
-    
----
-
-    DBP Gaussian Model:
-    
-    Dmax = 78.50 mmHg
-    
-    a_peak = 52.28 years
-    
-    σ = 81.14 years
----
-
-
-**iii. The model curves are shown below:**
-
-![My Figure](model_curve.png)
-
-
-**iv. Parameter Interpretation:**
-
-  Polynomial Model:
+    Fitted Parameters for each model:
   
-    c₁ (SBP curvature): Physical dimension is mmHg/year², it represents the acceleration of SBP increase with age. Positive value indicates upward curvature
+      SBP Polynomial Model:
+      
+      c1 = -0.002022 mmHg/year²
+      
+      c2 = 0.498886 mmHg/year
+      
+      c3 = 108.854700 mmHg
+
+---
+      DBP Polynomial Model:
+      
+      d1 = -0.005561 mmHg/year²
+      
+      d2 = 0.583338 mmHg/year
+      
+      d3 = 63.111150 mmHg
+
+---
+
+      SBP Sigmoid Model:
+      
+      Smax = 145.26 mmHg
+      
+      k = 0.0198 year⁻¹
+      
+      a0 = -53.81 years
     
-    d₁ (DBP curvature): Physical dimension is mmHg/year². It captures the inverted-U shape of DBP. Negative value shows downward curvature
+---
+
+      DBP Gaussian Model:
+      
+      Dmax = 78.50 mmHg
+      
+      a_peak = 52.28 years
+      
+      σ = 81.14 years
+---
+
+
+  **iii. The model curves are shown below:**
+  
+  ![My Figure](model_curve.png)
+
+
+  **iv. Parameter Interpretation:**
+
+    Polynomial Model:
+  
+      c₁ (SBP curvature): Physical dimension is mmHg/year², it represents the acceleration of SBP increase with age. Positive value indicates upward curvature
+      
+      d₁ (DBP curvature): Physical dimension is mmHg/year². It captures the inverted-U shape of DBP. Negative value shows downward curvature
 
 
 
-  Sigmoidal-Gaussian Model:
-    
-    Smax (~140 mmHg): Maximum SBP plateau in elderly. It physiologically represents maximum arterial stiffening, and is aligned with clinical hypertension thresholds
-    
-    a₀ (~50 years): Age at half-maximum SBP rise. It indicates mid-life BP transition point, and correlates with cardiovascular risk increase
-    
-    Dmax (~80 mmHg): Peak DBP in middle age, it represents optimal vascular resistance and physiologically meaningful threshold
-    
-    apeak (~45 years): Age of maximum DBP. It corresponds to vascular elasticity peak, it’s an important clinical monitoring point
-    
-    σ (~20 years): Spread of DBP change which indicates transition speed and reflects population variability
+    Sigmoidal-Gaussian Model:
+      
+      Smax (~140 mmHg): Maximum SBP plateau in elderly. It physiologically represents maximum arterial stiffening, and is aligned with clinical hypertension thresholds
+      
+      a₀ (~50 years): Age at half-maximum SBP rise. It indicates mid-life BP transition point, and correlates with cardiovascular risk increase
+      
+      Dmax (~80 mmHg): Peak DBP in middle age, it represents optimal vascular resistance and physiologically meaningful threshold
+      
+      apeak (~45 years): Age of maximum DBP. It corresponds to vascular elasticity peak, it’s an important clinical monitoring point
+      
+      σ (~20 years): Spread of DBP change which indicates transition speed and reflects population variability
 
 
 
-
-**v. Discussion and Analysis:**
-
-i. For SBP, Sigmoid model is superior because it better captures physiological plateauing and more realistic at age extremes with better R² and MSE values.
-
-For DBP, Gaussian model is better because it better fits observed data pattern, it naturally represents mid-life peak and physiologically plausible decline
-
-
-ii. For SBP changes: Gradual increase reflects arterial stiffening, plateau represents maximal vascular changes, and rate parameter indicates progression speed.
-
-For DBP changes: Mid-life peak shows vascular resistance, decline reflects arterial compliance loss and width indicates transition period
-
-
-
-iii. Limitations:
-
-The model's limitations in capturing demographic nuances include an inability to account for gender, ethnic, and socioeconomic differences. It also excludes key health-related factors like medications, comorbidities, and lifestyle influences. Temporal aspects are limited due to its cross-sectional nature, neglecting longitudinal data, secular trends, and seasonal variations. Statistically, the model assumes population homogeneity, underrepresents certain age ranges, and struggles with uncertainty at extreme ages. These gaps restrict its ability to generalize across diverse populations.
+  
+  **v. Discussion and Analysis:**
+  
+  i. For SBP, Sigmoid model is superior because it better captures physiological plateauing and more realistic at age extremes with better R² and MSE values.
+  
+  For DBP, Gaussian model is better because it better fits observed data pattern, it naturally represents mid-life peak and physiologically plausible decline
+  
+  
+  ii. For SBP changes: Gradual increase reflects arterial stiffening, plateau represents maximal vascular changes, and rate parameter indicates progression speed.
+  
+  For DBP changes: Mid-life peak shows vascular resistance, decline reflects arterial compliance loss and width indicates transition period
+  
 
 
+  iii. Limitations:
+  
+  The model's limitations in capturing demographic nuances include an inability to account for gender, ethnic, and socioeconomic differences. It also excludes key health-related factors like medications, comorbidities, and lifestyle influences. Temporal aspects are limited due to its cross-sectional nature, neglecting longitudinal data, secular trends, and seasonal variations. Statistically, the model assumes population homogeneity, underrepresents certain age ranges, and struggles with uncertainty at extreme ages. These gaps restrict its ability to generalize across diverse populations.
+  
+  
 
-
+---
 ---
 **B) i.) Synthetic Blood Pressure Data Generation**
 
 Here, I created synthetic BP data using bivariate normal distributions for males and females and different male-to-female ratios while maintaining total sample size of 100000, which can be implemented by the function np.random.multivariate_normal in NumPy library. Then a binary label indicating male (1) or female (0) was assigned to each data.
 
-**ii.) Binary Classification**
+  **ii.) Binary Classification**
 
 Divide the dataset into training (80%) and testing (20%) sets and then I chose logistic regression model as the binary classifier to estimate sex based on SBP and DBP values,
 
