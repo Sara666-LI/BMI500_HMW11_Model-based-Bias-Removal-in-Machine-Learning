@@ -113,14 +113,14 @@ Divide the dataset into training (80%) and testing (20%) sets and then I chose l
 
 After trained the logistic regression classifier on datasets with varying male-to-female ratios (M and F). I got the model performance metrics (F1 score and accuracy) shown below. 
 
-![My Figure](model performance metrics.png)
+![My Figure](model_performance_metrics.png)
 
 
 
 
 Alos, I plot the ROC curve for each model below.
 
-![My Figure](ROC Curve.png)
+![My Figure](ROC_Curve.png)
 
 Analysis:
 
@@ -191,11 +191,11 @@ Reasoning Behind the Approach:
 The approach leverages a custom loss function for direct fairness optimization, offering control over bias-accuracy trade-offs while maintaining performance. Class-specific tracking provides detailed bias monitoring, enabling targeted improvements and transparency. Balanced weights address data imbalance, preventing majority class dominance and enhancing minority class representation.
 
 
-![My Figure](Custom Bias-Aware performance.png)
+![My Figure](Custom_Bias-Aware_performance.png)
 
 
 
-![My Figure](Impact of Sample Size and Alpha on Gender Bias.png)
+![My Figure](Impact_of_Sample_Size_and_Alpha_on_Gender_Bias.png)
 
 
 The results show that increasing the bias penalty (alpha) reduces the accuracy gap between males and females with the dataset of 100000, though potentially at the cost of overall accuracy. This approach allows practitioners to tune the bias-accuracy trade-off according to their specific needs.
