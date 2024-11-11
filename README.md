@@ -201,3 +201,14 @@ The approach leverages a custom loss function for direct fairness optimization, 
 
 The results show that increasing the bias penalty (alpha) reduces the accuracy gap between males and females with the dataset of 100000, though potentially at the cost of overall accuracy. This approach allows practitioners to tune the bias-accuracy trade-off according to their specific needs.
 
+
+Suggestions for future modeling improvement:
+
+Based on the analysis and results, here are some suggestions for future modeling improvements to address bias in blood pressure classification.
+1. Expand dataset diversity: Collect data from a more diverse set of healthcare providers and locations and ensure adequate representation of underserved demographic groups. Also, try to collaborate with community organizations to improve data inclusivity
+
+2. Incorporate contextual features: Gather additional patient-level data, include provider-level features (specialty, experience, practice location, etc.) and leverage social determinants of health to better understand biases
+
+3. Use advanced bias mitigation techniques: Explore multi-task learning approaches to jointly optimize for accuracy and fairness and implement adversarial debiasing methods to explicitly remove sensitive information. Also, it's useful to Investigate causal modeling techniques to disentangle the effects of sensitive attributes.
+
+4. Apply model robustness evaluation: Conduct comprehensive testing across a wide range of demographic subgroups.Implement stress-testing procedures to assess model behavior under distributional shift. Also, it eould be beeter to establish protocols for continuous monitoring and updating of model performance
