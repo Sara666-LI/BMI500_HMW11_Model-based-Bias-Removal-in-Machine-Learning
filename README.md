@@ -163,12 +163,12 @@ There are three key components of the strategy:
 1. Class-Specific Loss Tracking: Separately tracks performance for males and females, and enables targeted optimization for each group.
 
 
-   --- 
+  --- 
     male_mask = tf.cast(y_true == 1, tf.float32)
     
     female_mask = tf.cast(y_true == 0, tf.float32)
 
-   ---
+  ---
 
 2.Bias penalty term penalizes differences in performance between genders, it encourages model to maintain similar accuracy across groups.
 
@@ -181,12 +181,12 @@ There are three key components of the strategy:
 3. Balanced class weights compensates for imbalanced class distribution, which ives higher importance to minority class samples
 
 
-   ---
+  ---
     class_weights = compute_class_weight('balanced', classes=np.unique(y), y=y)
-    
+  ---  
 
 
-Reasoning Behind the Approach:
+**Reasoning Behind the Approach:**
 
 The approach leverages a custom loss function for direct fairness optimization, offering control over bias-accuracy trade-offs while maintaining performance. Class-specific tracking provides detailed bias monitoring, enabling targeted improvements and transparency. Balanced weights address data imbalance, preventing majority class dominance and enhancing minority class representation.
 
