@@ -54,7 +54,7 @@
 
   **iii. The model curves are shown below:**
   
-  ![My Figure](model_curve.png)
+  ![My Figure](SBP_model_curve.png)
 
 
   **iv. Parameter Interpretation:**
