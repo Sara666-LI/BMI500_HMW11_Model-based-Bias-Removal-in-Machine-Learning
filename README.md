@@ -196,7 +196,7 @@ The approach leverages a custom loss function for direct fairness optimization, 
 
 
 
-![My Figure](Impact_of_Sample_Size_and_Alpha_on_Gender_Bias.png)
+![My Figure](Impact_of_Sample_Size_and Alpha_on_Gender_Bias.png)
 
 
 The results show that increasing the bias penalty (alpha) reduces the accuracy gap between males and females with the dataset of 100000, though potentially at the cost of overall accuracy. This approach allows practitioners to tune the bias-accuracy trade-off according to their specific needs.
