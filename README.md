@@ -59,25 +59,26 @@
 
 **iv. Parameter Interpretation:**
 
-Polynomial Model:
+  Polynomial Model:
+  
+    c₁ (SBP curvature): Physical dimension is mmHg/year², it represents the acceleration of SBP increase with age. Positive value indicates upward curvature
+    
+    d₁ (DBP curvature): Physical dimension is mmHg/year². It captures the inverted-U shape of DBP. Negative value shows downward curvature
 
-c₁ (SBP curvature): Physical dimension is mmHg/year², it represents the acceleration of SBP increase with age. Positive value indicates upward curvature
-
-d₁ (DBP curvature): Physical dimension is mmHg/year². It captures the inverted-U shape of DBP. Negative value shows downward curvature
 
 
+  Sigmoidal-Gaussian Model:
+    
+    Smax (~140 mmHg): Maximum SBP plateau in elderly. It physiologically represents maximum arterial stiffening, and is aligned with clinical hypertension thresholds
+    
+    a₀ (~50 years): Age at half-maximum SBP rise. It indicates mid-life BP transition point, and correlates with cardiovascular risk increase
+    
+    Dmax (~80 mmHg): Peak DBP in middle age, it represents optimal vascular resistance and physiologically meaningful threshold
+    
+    apeak (~45 years): Age of maximum DBP. It corresponds to vascular elasticity peak, it’s an important clinical monitoring point
+    
+    σ (~20 years): Spread of DBP change which indicates transition speed and reflects population variability
 
-Sigmoidal-Gaussian Model:
-
-Smax (~140 mmHg): Maximum SBP plateau in elderly. It physiologically represents maximum arterial stiffening, and is aligned with clinical hypertension thresholds
-
-a₀ (~50 years): Age at half-maximum SBP rise. It indicates mid-life BP transition point, and correlates with cardiovascular risk increase
-
-Dmax (~80 mmHg): Peak DBP in middle age, it represents optimal vascular resistance and physiologically meaningful threshold
-
-apeak (~45 years): Age of maximum DBP. It corresponds to vascular elasticity peak, it’s an important clinical monitoring point
-
-σ (~20 years): Spread of DBP change which indicates transition speed and reflects population variability
 
 
 
@@ -86,6 +87,7 @@ apeak (~45 years): Age of maximum DBP. It corresponds to vascular elasticity pea
 i. For SBP, Sigmoid model is superior because it better captures physiological plateauing and more realistic at age extremes with better R² and MSE values.
 
 For DBP, Gaussian model is better because it better fits observed data pattern, it naturally represents mid-life peak and physiologically plausible decline
+
 
 ii. For SBP changes: Gradual increase reflects arterial stiffening, plateau represents maximal vascular changes, and rate parameter indicates progression speed.
 
