@@ -56,7 +56,7 @@ a_peak = 52.28 years
 
 
 iii. The model curves are shown below:
-![My Figure](model_curves.png)
+![My Figure](model_curve.png)
 
 
 iv. Parameter Interpretation:
@@ -113,14 +113,14 @@ Divide the dataset into training (80%) and testing (20%) sets and then I chose l
 
 After trained the logistic regression classifier on datasets with varying male-to-female ratios (M and F). I got the model performance metrics (F1 score and accuracy) shown below. 
 
-![My Figure](model_performance_metrics.png)
+![My Figure](model performance metrics.png)
 
 
 
 
 Alos, I plot the ROC curve for each model below.
 
-![My Figure](ROC_curve.png)
+![My Figure](ROC Curve.png)
 
 Analysis:
 
