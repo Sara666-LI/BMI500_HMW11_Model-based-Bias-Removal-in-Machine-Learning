@@ -102,7 +102,7 @@ The model's limitations in capturing demographic nuances include an inability to
 
 
 
-
+---
 **B) i.) Synthetic Blood Pressure Data Generation**
 
 Here, I created synthetic BP data using bivariate normal distributions for males and females and different male-to-female ratios while maintaining total sample size of 100000, which can be implemented by the function np.random.multivariate_normal in NumPy library. Then a binary label indicating male (1) or female (0) was assigned to each data.
@@ -163,27 +163,27 @@ There are three key components of the strategy:
 1. Class-Specific Loss Tracking: Separately tracks performance for males and females, and enables targeted optimization for each group.
 
 
+   --- 
+    male_mask = tf.cast(y_true == 1, tf.float32)
+    
+    female_mask = tf.cast(y_true == 0, tf.float32)
 
-male_mask = tf.cast(y_true == 1, tf.float32)
-
-female_mask = tf.cast(y_true == 0, tf.float32)
-
-
+    ---
 
 2.Bias penalty term penalizes differences in performance between genders, it encourages model to maintain similar accuracy across groups.
 
 
-
-Copybias_penalty = tf.abs(male_avg - female_avg)
-
+    ---
+    Copybias_penalty = tf.abs(male_avg - female_avg)
+    ---
 
 
 3. Balanced class weights compensates for imbalanced class distribution, which ives higher importance to minority class samples
 
 
-
-class_weights = compute_class_weight('balanced', classes=np.unique(y), y=y)
-
+    ---
+    class_weights = compute_class_weight('balanced', classes=np.unique(y), y=y)
+    ---
 
 
 Reasoning Behind the Approach:
