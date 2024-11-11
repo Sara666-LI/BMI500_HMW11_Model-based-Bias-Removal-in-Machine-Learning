@@ -170,7 +170,7 @@ There are three key components of the strategy:
 
   ---
 
-2.Bias penalty term penalizes differences in performance between genders, it encourages model to maintain similar accuracy across groups.
+2. Bias penalty term penalizes differences in performance between genders, it encourages model to maintain similar accuracy across groups.
 
 
   ---
